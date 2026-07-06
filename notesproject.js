@@ -21,10 +21,10 @@ createbtn.addEventListener("click", () => {
 
     img.src = "https://cdn-icons-png.flaticon.com/128/2438/2438317.png";
 
-    notescontainer.appendChild(inputbox).appendChild(img);
+  notescontainer.appendChild(inputbox);
+inputbox.appendChild(img);
 
-    inputbox.focus();   // <-- Added this line
-
+inputbox.focus();
     updateStorage();
 });
 
