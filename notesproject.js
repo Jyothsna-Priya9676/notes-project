@@ -1,16 +1,18 @@
 const notesContainer = document.querySelector(".notes-container");
 const createBtn = document.querySelector(".btn");
 
+// Load saved notes
+function showNotes() {
+    notesContainer.innerHTML = localStorage.getItem("notes") || "";
+}
+showNotes();
+
+// Save notes
 function updateStorage() {
     localStorage.setItem("notes", notesContainer.innerHTML);
 }
 
-function showNotes() {
-    notesContainer.innerHTML = localStorage.getItem("notes") || "";
-}
-
-showNotes();
-
+// Create new note
 function createNote() {
     let note = document.createElement("p");
     let img = document.createElement("img");
@@ -25,21 +27,22 @@ function createNote() {
 
     updateStorage();
 }
+
+// Button click → create note
 createBtn.addEventListener("click", createNote);
-notesContainer.addEventListener("click", function (e) {
-    if (e.target === notesContainer) {
-        createNote();
-    }
-});
+
+// Click delete icon → remove note
 notesContainer.addEventListener("click", function (e) {
     if (e.target.tagName === "IMG") {
         e.target.parentElement.remove();
         updateStorage();
     }
 });
-notesContainer.addEventListener("keyup", function () {
-    updateStorage();
-});
+
+// Save while typing
+notesContainer.addEventListener("keyup", updateStorage);
+
+// Optional: Enter behavior fix
 document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         document.execCommand("insertLineBreak");
