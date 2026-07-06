@@ -1,66 +1,86 @@
 *{
     margin: 0;
-    padding:0;
-    font-family: 'Poppins','sans-serif';
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 .container{
     width: 100%;
-    min-height:100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg,#cf9aff,#95c0ff);
-    color:#fff;
-    padding-top:4%;
-    padding-left:10%;
+    color: #fff;
+    padding-top: 4%;
+    padding-left: 10%;
 }
 
-.container button img{
-    width:20px;
-    margin-right:8px;
-    background-color:white;
-}
-
+/* Title */
 .container h1{
-    display:flex;
-    align-items:center;
-    font-size:35px;
-    font-weight:600;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 600;
 }
 
 .container h1 img{
-    width:60px;
+    width: 60px;
+    margin-right: 10px;
 }
 
+/* Button */
 .container button{
-    display:flex;
-    align-items:center;
-    background:linear-gradient(#9418fd,#571094);
-    font-size:16px;
-    color:#fff;
-    border-radius:40px;
-    padding:15px 25px;
-    border:0;
-    outline:0;
-    margin:30px 0 20px;
-    cursor:pointer;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#9418fd,#571094);
+    font-size: 16px;
+    color: #fff;
+    border-radius: 40px;
+    padding: 15px 25px;
+    border: 0;
+    outline: 0;
+    margin: 30px 0 20px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
+.container button:hover{
+    transform: scale(1.05);
+}
+
+.container button img{
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* Notes box */
 .input-box{
-    position:relative;
-    width:100%;
-    max-width:500px;
-    min-height:150px;
-    background:#fff;
-    color:#333;
-    padding:20px;
-    margin:20px 0;
-    border-radius:5px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+
+    /* important fixes */
+    outline: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
+/* delete icon */
 .input-box img{
-    width:25px;
-    position:absolute;
-    bottom:15px;
-    right:15px;
-    cursor:pointer;
+    width: 25px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.input-box img:hover{
+    opacity: 1;
 }
